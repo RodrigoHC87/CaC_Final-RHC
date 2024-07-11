@@ -1,0 +1,236 @@
+/* ****************************************************************** */
+/* *    ///////////// Encuesta  //////////////////// Encuesta         * */
+/* ****************************************************************** */
+
+.wrapper {
+
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "contenedorppal";
+
+    gap: 30px;
+}
+
+
+/* .titulomain {
+    grid-area: titulo;
+
+    background: linear-gradient(to right,  #A9D4F8, #FFFFFF, #A9D4F8);
+
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 1.8em;
+    text-decoration: underline;
+    text-decoration-color: #fcbf45;
+    text-decoration-thickness: 3px;
+    border-radius: 25px;
+} */
+
+.titulo-princ {
+    grid-area: titulo;
+    background: linear-gradient(to right,  #A9D4F8, #FFFFFF, #A9D4F8);
+    /* grid-column: 2/3; */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8em;
+    text-decoration: underline;
+    text-decoration-color: #fcbf45;
+    text-decoration-thickness: 3px;
+    border-radius: 25px;
+    margin-bottom: 100px;
+
+}
+
+
+
+.contenedorenvol {
+    grid-area: contenedorppal;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "secundario"
+        "principal";
+
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 150px;
+}
+
+.contenedorenvol > * {
+    padding: 2em;
+}
+
+
+.contenedorForm {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)), url(../img/monumento.jpg);
+    background-repeat: no-repeat;
+
+    box-shadow: 0 0 30px 0 rgb(255,193,69);
+
+
+    background-size: 100% auto;
+    margin-top: 90px;
+    grid-area: principal;
+
+    border-radius: 25px;
+}
+
+
+.encuestaform {
+    background: rgba(0, 0, 0, .75);
+
+    margin:  5% 5%;
+    margin-bottom: 50px;
+    padding: 3em;
+}
+
+
+.encuestaform form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 1fr 1fr; */
+
+}
+
+.dosColumnaA  {
+    grid-column: 1/3;
+}
+
+.dosColumnaB  {
+    grid-column: 3/5;
+}
+
+.encuestaform h3 {
+    grid-column: 1/3 ;
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+.encuestaform form label,
+.encuestaform form select {
+    display: block;
+    font-size: 1.05em;
+    margin-bottom: .4em;
+    color: white;
+}
+
+.encuestaform form label {
+    font-weight: bold;
+}
+
+.encuestaform form input {
+    font-size: 1em;
+}
+
+.encuestaform form p {
+    margin: 0;
+    padding: 1.2em;
+}
+
+.encuestaform form .bloque {
+    grid-column: 1 / 3;
+
+}
+
+.bloque textarea {
+    font-size: 1.1em;
+}
+
+.encuestaform form button,
+.encuestaform form input,
+.encuestaform form textarea,
+.encuestaform form select {
+
+    width: 100%;
+    padding: .3em;
+    outline: 0;
+    color: black;
+}
+
+.encuestaform form input,
+.encuestaform form textarea,
+.encuestaform form select {
+    border-radius: 5px;
+    border: 1.8px solid black;
+}
+
+
+
+.btnenviar {
+    grid-column: 2/4;
+    width: 100%;
+}
+
+.boton-envio {
+    cursor: pointer;
+}
+
+.encuestaform form button {
+    background: #b70e21;
+    color: #000;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.encuestaform form button:hover,
+.encuestaform form button:focus {
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+
+
+.introEncuesta {
+
+    grid-area: secundario;
+
+    color: black;
+    background: #f4f4f4;
+
+     box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.4); /* Sombra con desplazamiento, desenfoque, extensión y color */
+
+    justify-content: center;
+    align-content: center;
+    border-radius: 25px;
+
+}
+
+
+.introEncuesta h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+
+.introEncuesta p {
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.textoEncuestaP {
+    font-style: italic;
+    font-style: oblique;
+}
+
+.textoPregunta {
+    font-weight: bold;
+}

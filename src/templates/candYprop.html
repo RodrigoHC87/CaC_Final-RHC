@@ -1,0 +1,247 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candyprop.css') }}">
+    <style>
+        .cont-principal{
+            background: linear-gradient(to bottom, #FFFFFF 40%,  #A9D4F8 90%);
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}Candidatos Presidenciales 2027{% endblock %}
+
+
+{% block body %}
+<div id="candidatosYpropuestas">
+
+    <!-- Nuevo -->
+    <div class="titulo-princ">
+        <h3>Candidatos Presidenciales 2027</h3>
+    </div>
+
+
+    <div class="candidatos">
+
+        <figure class="snip0015">
+            <img src="{{ url_for('static', filename='img/milei2.png') }}" alt="Foto-Milei" class="img-fluid">
+            <figcaption>
+                <h2>La libertad <span>no</span> avanza</h2>
+                <p>No conozco a Lali Espósito. Yo escucho a los Rolling Stones</p>
+                <!-- <a href="#"></a> -->
+            </figcaption>
+        </figure>
+
+        <div class="info_candidato">
+            <h3>La libertad Avanza</h3>
+            <p>
+                Es una coalición política argentina de tendencia conservadora en temas sociales y libertaria en temas económicos. <br>
+                <br>
+                Surgió en la Ciudad de Buenos Aires y fue fundada el 14 de julio de 2021.
+
+                Es liderada por el economista y diputado nacional Javier Milei, único precandidato a presidente del espacio,
+                es acompañado por la diputada Victoria Villarruel para ocupar el cargo de vicepresidente.
+            </p>
+
+            <!-- NUEVO! -->
+            <article class="oculto" id="texto_oculto1">
+                <h4>Información Adicional</h4>
+                <p>
+                    Tiene propuestas como la dolarización de la economía, la eliminación del Banco Central, la libre portación de armas y
+                    la venta libre de órganos (dice que “es un mercado más”), algo que está prohibido por la ley argentina. <br>
+                    <br>
+                    Además, descree de la intervención humana en el calentamiento global, a pesar de que la evidencia lo contradice. <br>
+                    <br>
+                    Su discurso gira en torno a la "libertad" y a un concepto que él bautizó como "la casta", es decir, la clase politica
+                    argentina que vive del Estado.
+                </p>
+                <img src="{{ url_for('static', filename='img/logolla.png') }}" alt="logo - la libertad no avanza">
+            </article>
+
+            <button class="leermas_btn" id="mostrar_texto_btn1">
+                leer mas
+            </button>
+
+        </div>
+    </div>
+
+
+    <div class="candidatos">
+
+        <figure class="snip0015">
+            <img src="{{ url_for('static', filename='img/masa3.png') }}" alt="Foto-Massa">
+            <figcaption>
+                <h2>Unión por el <span>Poder</span> </h2>
+                <p>Si vos fuera pinocho, ya me hubieras lastimado un ojo</p>
+                <!-- <a href="#"></a> -->
+            </figcaption>
+        </figure>
+
+        <div class="info_candidato">
+            <h3>Union por la Patria</h3>
+            <p>
+                Unión por la Patria es la coalición política gobernante en Argentina tras su victoria en las elecciones presidenciales de
+                2019, siendo sucesora del Frente de Todos. <br>
+                <br>
+                El 23 de junio, Unión por la Patria anunció oficialmente a Sergio Massa como su único candidato presidencial. Massa sería
+                acompañado por Agustín Rossi, como candidato vicepresidencial.
+            </p>
+
+            <!-- NUEVO! -->
+            <article class="oculto" id="texto_oculto2">
+                <h4>Información Adicional</h4>
+                <p>
+                    Desde que asumió como ministro de Economía de la Nación, buena parte de su discurso se enfocó en destacar políticas de
+                    su gestión, como la eliminación del impuesto a las Ganancias, la quita de retenciones a algunos productos agropecuarios
+                    y la evolución del empleo en el último año. <br>
+                    <br>
+                    Prometio cumplir con la meta de déficit y reducir la inflación, cumplio con el 2,5% de deficit previsto para el 2022,
+                    pero no asi con la inflación, que se acelero en 2023 (138.3% interanual).
+                </p>
+                <img src="{{ url_for('static', filename='img/logoupp.png') }}" alt="logo - union por la patria">
+            </article>
+
+            <button class="leermas_btn" id="mostrar_texto_btn2">
+                leer mas
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="candidatos">
+        <figure class="snip0015">
+            <img src="{{ url_for('static', filename='img/pato.png') }}" alt="Foto-Bullrich">
+            <figcaption>
+                <h2>Juntos <span>sin</span> el <span>Cambio</span></h2>
+                <p> Ya lo vas a entender...</p>
+                <!-- <a href="#"></a> -->
+            </figcaption>
+        </figure>
+
+        <div class="info_candidato">
+            <h3>Juntos por el cambio</h3>
+            <p>
+                Juntos por el Cambio es una coalición política creada en 2019. Es la sucesora de Cambiemos, ganadora de las elecciones
+                presidenciales de 2015 que llevaron a Mauricio Macri a la presidencia. <br>
+                <br>
+                Finalmente, el 26 de marzo de 2023, Macri anunció que no se iba a presentar como precandidato en las elecciones,
+                lo que dio via libre para la presentacion de Patricia Bullrich como presidente y Luis Petri como su vice.
+            </p>
+
+            <!-- NUEVO! -->
+            <article class="oculto" id="texto_oculto3">
+                <h4>Información Adicional</h4>
+                <p>
+                    Por su experiencia como ministra de Seguridad, el delito y la lucha contra el narcotráfico son asuntos recurrentes
+                    en su discurso. En varias oportunidades destacó datos sobre la seguridad en Rosario y en el resto del país durante
+                    la gestión de Cambiemos. <br>
+                    <br>
+                    Fue ministra de Trabajo en el gobierno de la Alianza (etapa en la que firmó un decreto de recorte del 13% en el monto
+                    de haberes jubilatorios) y de Seguridad en el de Cambiemos. <br>
+                    <br>
+                    En este último cargo, logró llevar la tasa de homicidios a uno de los mínimos históricos.
+                </p>
+                <img src="{{ url_for('static', filename='img/logojxc.png') }}" alt="logo - juntos por el cambio">
+            </article>
+
+            <button class="leermas_btn" id="mostrar_texto_btn3">
+                leer mas
+            </button>
+        </div>
+    </div>
+
+
+    <div class="candidatos">
+        <figure class="snip0015">
+            <img src="{{ url_for('static', filename='img/juanchp.png') }}" alt="Foto-Schiaretti">
+            <figcaption>
+                <h2>La Republica de <span>Córdoba</span></h2>
+                <p>En Córdoba ya solucionamos eso</p>
+                <!-- <a href="#"></a> -->
+            </figcaption>
+        </figure>
+
+        <div class="info_candidato">
+            <h3>Hacemos por nuestro país</h3>
+            <p>
+                A inicios de 2023 se inició la construcción de este espacio de "tercera vía", sucesor de la coalición Consenso Federal,
+                participante de las elecciones de 2019. <br>
+                <br>
+                En este espacio se integraron el peronismo federal, el socialismo y otros partidos como el Demócrata Cristiano y el
+                Autonomista, además de otras fuerzas provinciales. <br>
+                <br>
+                Los hombres al frente del espacio son, Juan Schiaretti como presidente y Florencio Randazzo como vicepresidente del
+                bloque.
+            </p>
+
+            <!-- NUEVO! -->
+            <article class="oculto" id="texto_oculto4">
+                <h4>Información Adicional</h4>
+                <p>
+                    Su discurso de campaña se enfocó en destacar las políticas llevadas a cabo en Córdoba durante su gestión.
+                    Suele destacar que en su provincia no hay déficit fiscal y que su gobierno construyó muchos jardines de infantes. <br>
+                    <br>
+                    Gobierna Córdoba- el segundo distrito electoral mas grande del pais. <br>
+                    <br>
+                    Trabajó en la Cancillería y en el Ministerio de Economía de la Nación (como secretario de la industria) durante el
+                    1er gobierno de Carlos Menem.
+                </p>
+                <img src="{{ url_for('static', filename='img/logohporp.png') }}" alt="logo - hacemos por nuestro país">
+            </article>
+
+            <button class="leermas_btn" id="mostrar_texto_btn4">
+                leer mas
+            </button>
+        </div>
+    </div>
+
+    <div class="candidatos ult-candidato">
+        <figure class="snip0015">
+            <img src="{{ url_for('static', filename='img/bregman.png') }}" alt="Foto-Bregman">
+            <figcaption>
+                <h2>La <span>SIN</span>niestra</h2>
+                <p>¿Cómo puede pasar de un lado al otro sin despeinarse?</p>
+                <!-- <a href="#"></a> -->
+            </figcaption>
+        </figure>
+
+        <div class="info_candidato">
+            <h3>Frente de Izquierda </h3>
+            <p>
+                El Frente de Izquierda y de Trabajadores - Unidad (FIT-U) es una coalición política que engloba a partidos y movimientos
+                de izquierda y extrema izquierda. Fue creada en 2011 y desde entonces se ha presentado a todas las elecciones
+                legislativas y presidenciales. <br>
+                <br>
+                El FIT-U fue a internas por primera vez desde 2015, entre los referentes del Partido de los Trabajadores Socialistas y
+                la candidatura conjunta del Partido Obrero y el Movimiento Socialista de los Trabajadores, ganando la candidatura para
+                presidente Myriam Bregman y su compañero Nicolás del Caño.
+            </p>
+
+            <!-- NUEVO! -->
+            <article class="oculto" id="texto_oculto5">
+                <h4>Información Adicional</h4>
+                <p>
+                    La agenda feminista y la lucha por los derechos humanos fueron algunos de los principales enfoques de su discurso
+                    durante la campaña electoral de 2023. <br>
+                    <br>
+                    Tuvo 2 mandatos en la Cámara baja: en 2015 fue electa diputada nacional por la Provincia de Buenos Aires, y en
+                    2021, por la CABA. Tambien fue legisladora porteña y 2 veces candidata a jefa de Gobierno.
+                </p>
+                <img src="{{ url_for('static', filename='img/logofti.png') }}" alt="logo - frente de izquierda">
+            </article>
+
+            <button class="leermas_btn" id="mostrar_texto_btn5">
+                leer mas
+            </button>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/candyprop.js') }}"></script>
+{% endblock %}

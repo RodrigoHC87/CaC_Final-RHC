@@ -1,0 +1,269 @@
+/* ****************************************************************** */
+/* *    ///////////// Candidatos  //////////////// Candidatos         * */
+/* ****************************************************************** */
+
+/*  NUEVO/////////////////////////////NUEVO/////////////////////////////NUEVO/////////////////////////////NUEVO///////////////////////////// */
+/* #candidatosYpropuestas {
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+       "titulo titulo titulo"
+       "candidatos candidato candidato";
+
+    gap: 125px;
+
+    /* background: linear-gradient(to bottom, #FFFFFF 70%,  #A9D4F8 90%); 
+
+} */
+
+#candidatosYpropuestas {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "candidatos";
+
+    gap: 125px;
+}
+
+#candidatosYpropuestas div {
+
+    border-radius: 25px;
+    text-align: center;
+
+    display: grid;
+
+    align-items: center;
+}
+
+.ult-candidato {
+    margin-bottom: 80px;
+}
+
+.titulo-princ {
+    background: linear-gradient(to right,  #A9D4F8, #FFFFFF, #A9D4F8);
+    /* grid-column: 2/3; */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8em;
+    text-decoration: underline;
+    text-decoration-color: #fcbf45;
+    text-decoration-thickness: 3px;
+}
+
+.candidatos {
+   color: black;
+   background: #f4f4f4;
+
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.4);
+
+    display: grid;
+    grid-template-columns: auto 2fr;
+
+    grid-template-areas:
+        "imagenCandidato infoCandidato";
+
+    gap: 25px;
+
+    /* grid-column: 2/3; */
+
+    justify-content: center;
+    align-content: center;
+
+    padding: 0;
+}
+
+
+
+.info_candidato h3 {
+    text-align: left;
+    padding-left: 1.5em;
+    font-size: 1.5em;
+}
+
+.info_candidato p {
+    text-align: left;
+    padding: 12.5px 2.5em;
+    font-size: 1.2em;
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.info_candidato h3 {
+    text-align: left;
+    padding-left: 1.5em;
+    font-size: 1.5em;
+}
+
+.info_candidato h4 {
+    text-align: left;
+    padding-left: 2em;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.leermas_btn {
+    background: blue;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    padding: 15px 32px;
+    font-size: 1em;
+    box-shadow: 0 0 10px 0 blue;
+    cursor: pointer;
+    margin: 15px ;
+    justify-self: center;
+}
+
+.leermas_btn:hover {
+    box-shadow: none;
+    background-color: black;
+    color: #fff;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
+}
+
+.oculto {
+    display: none;
+}
+
+.oculto img {
+    max-width: 280px;
+    height: auto;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.mostrar {
+    display: block;
+}
+
+
+
+
+/* NUEVO2.0!  */
+/* //////////////////////  EFECTO IMAGEN  ///////////////////////////////// */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+figure.snip0015 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-left: 65px;
+  min-width: 220px;
+  max-width: 410px;
+  max-height: 270px;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+  cursor: help;
+}
+figure.snip0015 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.snip0015 img {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0015 figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3em 3em;
+  width: 100%;
+  height: 100%;
+}
+figure.snip0015 figcaption::before {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  bottom: 50%;
+  left: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0015 h2,
+figure.snip0015 p {
+  margin: 0 0 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform
+              0.35s,-o-transform 0.35s,transform 0.35s;
+}
+figure.snip0015 h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(0%, 50%, 0);
+  transform: translate3d(0%, 50%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  font-size: 1.5em;
+}
+figure.snip0015 h2 span {
+  font-weight: 800;
+  font-size: 2em;
+}
+figure.snip0015 p {
+  font-weight: 200	;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  font-size: 1.4em;
+}
+
+figure.snip0015 p::before {
+    content: '\201C';
+}
+figure.snip0015 p::after {
+    content: '\201D';
+}
+
+figure.snip0015 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  color: #ffffff;
+}
+figure.snip0015:hover img {
+  opacity: 0.2;
+}
+figure.snip0015:hover figcaption h2 {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0015:hover figcaption p {
+  opacity: 0.9;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0015:hover figcaption::before {
+  background: rgba(255, 255, 255, 0);
+  top: 30px;
+  bottom: 30px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}

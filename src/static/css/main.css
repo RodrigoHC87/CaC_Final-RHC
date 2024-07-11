@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'raleway', sans-serif, Arial, Helvetica;
+    min-height: 100vh;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+.cont-principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    gap: 2rem;
+    background: linear-gradient(to top, #FFFFFF 20%,  #A9D4F8 80%);
+
+}
+
+
+
+/* **************************************************************************************** */
+/* *        ///////////// HEADER  ///////////// HEADER  ///////////// HEADER              * */
+/* **************************************************************************************** */
+
+header {
+    grid-area: header;
+    background-color: #000 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+
+.logoheader {
+    width: 180px;
+    height: auto;
+}
+
+.nav-lista {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-lista li a {
+    text-decoration: none;
+    color: #ececec ;
+
+    text-decoration: none;
+    /* color: black; */
+    font-weight: bold;
+
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+/* Efecto cuando no paso el mouse sobre el item */
+.nav-lista li a::before {
+    content:"";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+}
+    /* Efecto cuando paso el mouse sobre el item */
+.nav-lista li a:hover::before {
+        width: 100%;
+}
+
+
+.nav-lista li a::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.nav-link.active {
+    color: red;
+    font-size: 1.1rem;
+}
+
+
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+
+/* **************************************************************************************** */
+/* *        ///////////// MAIN    ///////////// MAIN    ///////////// MAIN                * */
+/* **************************************************************************************** */
+
+
+.wrapper {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "titulo"
+        "menu";
+    gap: 2rem;
+
+}
+
+.tituloPrincipal {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+
+#titulo {
+    grid-area: titulo;
+    text-align: center;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+
+.intro {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#menu {
+
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 200px);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+        "encuesta encuesta gráficos gráficos"
+        "encuesta encuesta posts contact";
+}
+
+
+#menu .tile {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#menu .tile a {
+    text-decoration: none;
+}
+
+#menu .tile .frontal {
+    color: white;
+    background-color: black;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center center;
+
+    transition: all 0.3s ease;
+}
+
+#menu .tile .trasera {
+    background: #222;
+    color: whitesmoke;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+
+#menu .tile:hover .frontal {
+    margin-top: -100%;
+}
+
+#menu .projects-tile:hover .frontal {
+    margin-top: -50%;
+}
+
+#menu .about-tile .frontal {
+    background-image: url(../img/graficos1.png);
+
+}
+
+#menu .projects-tile .frontal {
+    background-image: url(../img/encuestas3.webp);
+}
+
+#menu .posts-tile .frontal {
+    background-image: url(../img/noticias.jpg);
+}
+
+#menu .contact-tile .frontal {
+    background-image: url(../img/contacto2.jpg);
+}
+
+
+.about-tile {
+    grid-area: encuesta;
+}
+
+.projects-tile {
+    grid-area: gráficos;
+}
+
+
+
+/* **************************************************************************************** */
+/* *        ///////////// FOOTER  ///////////// FOOTER  ///////////// FOOTER              * */
+/* **************************************************************************************** */
+
+footer {
+    grid-area: footer;
+    background: #000;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    box-sizing: border-box;
+    grid-template-areas:
+        "logo navegacion contacto"
+        "footer footer footer";
+}
+
+
+.iconosFooter {
+    font-size: 2rem;
+}
+
+.logofooter,
+.menufooter,
+.contactofooter {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.subtitulosFo {
+    color: #fff;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.menuNavF {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+
+}
+
+.logofooter {
+    grid-area: logo;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.imglogofooter {
+    width: 250px;
+    height: auto;
+}
+
+
+
+.menufooter {
+    grid-area: navegacion;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column wrap;
+
+    align-items: center;
+
+    text-align: left;
+
+}
+
+.menufooter ul {
+    list-style: none;
+    margin: 0;
+}
+
+.menufooter ul li a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+
+
+
+.contactofooter {
+    grid-area: contacto;
+
+    box-sizing: border-box;
+
+}
+
+.contactofooter ul {
+    list-style: none;
+
+    display: flex;
+
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;
+}
+
+
+.contactofooter ul li {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contactofooter ul li a {
+    text-decoration: none;
+    color: #ececec ;
+}
+
+
+.copyfooter {
+    grid-area: footer;
+    box-sizing: border-box;
+    justify-self: center;
+    display: flex;
+}
+
+.copyfooter h5 {
+    color: #ececec;
+    margin: 5px;
+}

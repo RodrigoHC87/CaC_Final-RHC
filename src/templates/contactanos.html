@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contactanos{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contactanos.css') }}">
+    <style>
+        .cont-principal{
+            background: linear-gradient(to bottom, #FFFFFF 40%,  #A9D4F8 90%);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="wrapper">
+
+        <div class="titulomain">
+            <h3 class="titprincipal">Si tenes alguna pregunta o deseas más información, envíanos un mensaje</h3>
+        </div>
+
+        <div class="contenedorenvol">
+
+            <div class="contactoform">
+
+                <h3 class="titsecundario">Rellena el formulario para ponerse en contacto con nosotros</h3>
+
+                <form action="/mensajes_contacto" method="POST" id="formulario">
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </p>
+                    <p>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </p>
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </p>
+                    <p>
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" name="telefono" id="telefono">
+                    </p>
+                    <p>
+                        <label for="asunto">Asunto</label>
+                        <input type="text" name="asunto" id="asunto">
+                    </p>
+                    <p class="bloque">
+                        <label for="comentario">Comentario</label>
+                        <textarea name="comentario" id="comentario" rows="2"></textarea>
+                    </p>
+
+                    <div id="politicas" class="checkitem">
+                        <input id="check" name="check" type="checkbox">
+                        <label class="labelcheck" for="check">
+                            Me gustaría recibir el boletin RHC Novedades, a través de correo electrónico.
+                        </label>
+                    </div>
+
+                    <div class="btnenviar">
+                        <button id="boton-envio" class="boton-envio" type="submit">Enviar</button>
+                    </div>
+
+                    <p class="avisoForm" id="avisoForm"></p>
+                </form>
+            </div>
+
+            <div class="contactoinfo">
+
+                <h4>Mas Información</h4>
+
+                <ul>
+                    <li class="listadoContacto"><i class="fa-solid fa-house"></i>www.tupagina.com.ar</li>
+                    <li><i class="fa-solid fa-location-dot"></i>&nbsp;Isidro Olivera 331</li>
+                    <li><i class="fa-solid fa-phone"></i>+54 9 351 9521583</li>
+                    <li><i class="fa-solid fa-envelope"></i>notiene@notiene.com</li>
+                </ul>
+
+                <p class="contactoparr primero">
+                    No importa lo que necesites, para saber más sobre nuestra
+                    experiencia, para preguntarnos cómo mejorar o construir su servicio web
+                    o para solicitar un presupuesto no dude en ponerse en contacto con nosotros.
+                </p>
+
+                <p class="contactoparr">
+                    Estaremos encantados de hablar con usted para compartir nuestra experiencia y
+                    darle ideas sobre la dirección correcta de diseño para su aplicación web.
+                </p>
+
+                <p class="contactoparr ultimo">
+                    Nos encanta conversar con profesionales e inspirarnos en proyectos interesantes.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/contactanos.js') }}"></script>
+{% endblock %}

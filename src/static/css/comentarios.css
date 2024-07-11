@@ -1,0 +1,251 @@
+
+
+.wrapper {
+    min-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;
+
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "contenedorppal";
+
+    gap: 50px;
+}
+
+
+.titulo-princ {
+    grid-area: titulo;
+    background: linear-gradient(to right,  #A9D4F8, #FFFFFF, #A9D4F8);
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8em;
+    text-decoration: underline;
+    text-decoration-color: #fcbf45;
+    text-decoration-thickness: 3px;
+    border-radius: 25px;
+    /* margin-bottom: 100px; */
+
+}
+
+
+/* ************************************************************************** */
+
+
+
+.contenedorenvol {
+    display: grid;
+    grid-template-columns:  auto auto;
+    grid-template-areas:
+    "cajacom comentarios"
+    "x comentarios";
+    gap: 45px;
+    box-sizing: content-box;
+
+}
+
+
+
+/* Caja de comentarios */
+.caja-comentario{
+    grid-area: cajacom;
+    margin-left: auto;
+    margin-top: 40px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    max-height: 750px;
+    background-color: #f8f8f2;
+    padding : 1.5rem;
+}
+
+.Formulario {
+    margin-top: 45px;
+}
+
+.card-title.caja-coment {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.nombre-correo {
+    display: flex;
+    gap: 20px; /* Espacio entre los conjuntos de campos */
+    width: 100%; /* Ancho del contenedor */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.mitad {
+    max-width:48%; /* Ocupa la mitad del contenedor */
+}
+
+.campo label {
+    font-size: .9rem;
+    color: #000;
+}
+
+.campo input, .campo textarea {
+    width: 100%;
+    border-radius: .75rem;
+    background-color: #f8f8f8;
+    color: #000;
+    border: 1.5px solid #fcbf45; /* Añade un borde para mejor visibilidad */
+    padding: 0.5rem; /* Añade relleno para mejor apariencia */
+    box-sizing: border-box;
+    transition: border-color 0.4s ease;
+    font-size: 1rem;
+}
+
+.campo input:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añade una sombra al enfocar */
+}
+
+.campo textarea:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añade una sombra al enfocar */
+}
+
+.campo input {
+    height: 55px;
+}
+
+
+.btn-group.btn-comentario {
+    margin-top: 40px;
+}
+
+
+.btn-editar.btn-enviar {
+    max-width: 60%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.btn-editar.btn-enviar {
+    color: #fff;
+    background-color:#000;
+    border-color:   #000;
+}
+
+.btn-editar.btn-enviar:hover {
+    background-color: #222;
+    border-color: #000;
+}
+
+
+.tarjetacomentario {
+    grid-area: comentarios;
+}
+/* Estilos personalizados para las tarjetas comentarios */
+.custom-card {
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-top: 40px;
+    border: 3px solid #333;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    background-color: #f8f8f2;
+}
+
+.fecha-hora {
+    color: #666;
+    font-size: 0.8rem;
+    text-align: right;
+    margin-bottom: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+.custom-card .card-body {
+    padding : 0rem 1.5rem 1.2rem 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    padding-top: 0px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.card-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+}
+
+/* Estilos para los botones */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.400rem 2.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-sizing: content-box;
+}
+
+.btn {
+    margin-right: 20px; /* Ajusta el margen entre los botones */
+}
+
+.btn {
+    flex: 1; /* Hace que todos los botones dentro de .btn-group tengan el mismo ancho */
+    margin: 0 5px; /* Ajusta el margen entre los botones según tu preferencia */
+    max-width: 60px; /* Establece un ancho máximo para los botones, ajusta según sea necesario */
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 15px; /* Espacio superior opcional entre el texto y los botones */
+}
+
+.btn-editar {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-editar:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-borrar {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-borrar:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}

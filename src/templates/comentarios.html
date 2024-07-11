@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block title %}Tu espacio{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/comentarios.css') }}">
+    <style>
+        .cont-principal{
+            background: linear-gradient(to bottom, #FFFFFF 40%,  #A9D4F8 90%);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <div class="wrapper">
+
+        <div class="titulo-princ">
+            <h3>Dejanos tu opinión, otros argentinos la esperan</h3>
+        </div>
+
+        <div class="contenedorenvol">
+
+            <div class="caja-comentario">
+                <h4 class="card-title caja-coment">Deja tu comentario</h4>
+                <p class="card-text"><b>Política de comentarios:</b> Nos encantan los comentarios y agradecemos el tiempo
+                    que los lectores de nuestro blog dedican a escribirlos. Sin embargo, todos los
+                    comentarios serán revisados por un moderador antes de ser publicados y aquellos
+                    considerados inapropiados serán eliminados.
+                </p>
+
+                <form action="/agregarComentario" method="POST" class="Formulario" id="formulario">
+                    <div class="nombre-correo">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre">
+                        </div>
+                        <div class="campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="text" name="correo" id="correo">
+                        </div>
+                    </div>
+
+                    <div class="campo mitad">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" name="asunto" id="asunto">
+                    </div>
+
+                    <div class="campo">
+                        <label for="comentario">Comentario</label>
+                        <textarea name="comentario" rows="8" id="comentario"></textarea>
+                    </div>
+
+                    <div class="btn-group btn-comentario">
+                        <!-- <a href="#" class="btn btn-editar btn-enviar">Publicar comentario</a> -->
+                        <button class="btn btn-editar btn-enviar" type="submit">
+                            Publicar comentario
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tarjetacomentario">
+                {% for d in data %}
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <p class="fecha-hora">{{ d['fechaFormateada'] }} - {{ d['hora'] }}</p>
+                            <h5 class="card-title">{{ d['nombre'] }}</h5>
+                            <h6 class="card-subtitle">{{ d['asunto'] }}</h6>
+                            <p class="card-text">
+                                {{ d['comentario'] }}
+                            </p>
+                            <div class="btn-group">
+                                <a href="/editar/{{ d['id'] }}" class="btn btn-editar">Editar</a>
+                                <a href="/borrar/{{ d['id'] }}" class="btn btn-borrar btn-delete">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/comentarios.js') }}"></script>
+{% endblock %}

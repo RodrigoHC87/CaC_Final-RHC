@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Argentina Elige 2027
+{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+
+    <div id="titulo">
+        <h1  class="tituloPrincipal">Argentinos que escuchan a otros Argentinos</h1>
+        <p class="intro">
+            En esta oportunidad y considerando el momento que estamos atravesando,
+            queremos darte algunas noticias en relación a los candidatos presidenciales y sus
+            propuestas. Pero más que hablarte, ¡preferimos escucharte!
+        </p>
+    </div>
+
+    <div id="menu">
+        <div class="tile about-tile">
+            <a href="{{ url_for('candidatosYpropuestas') }}">
+                <div class="frontal"></div>
+                <div class="trasera">CANDIDATOS</div>
+            </a>
+        </div>
+        <div class="tile projects-tile">
+            <a href="{{ url_for('encuesta') }}">
+                <div class="frontal"></div>
+                <div class="trasera">ENCUESTA</div>
+            </a>
+        </div>
+        <div class="tile posts-tile">
+            <a href="novedades.html">
+                <div class="frontal"></div>
+                <div class="trasera">COMENTARIOS</div>
+            </a>
+        </div>
+        <div class="tile contact-tile">
+            <a href="contactanos.html">
+                <div class="frontal"></div>
+                <div class="trasera">CONTACTO</div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

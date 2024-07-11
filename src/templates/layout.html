@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- FontAwesome  -->
+    <script src="https://kit.fontawesome.com/dd88301ce1.js" crossorigin="anonymous"></script>
+    <!-- bootstrap ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+    {% block css %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+
+</head>
+
+    <body>
+        <div class="cont-principal">
+
+            <!-- ?             - - - - - - - - - - - -  HEADER  - - - - - - - - - - - -              -->
+            <!-- ?             - - - - - - - - - - - -  HEADER  - - - - - - - - - - - -              -->
+            <header>
+                <img class="logoheader" src="{{ url_for('static', filename='img/logoFinal.png') }}" alt="imagen-logo">
+
+                <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+
+                <nav class="navegador" id="navegador">
+
+                    <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-square"></i></button>
+
+                    <ul class="nav-lista">
+                        <li><a href="{{ url_for('main') }}" class="nav-link">Inicio</a></li>
+                        <li><a href="{{ url_for('candidatosYpropuestas') }}" class="nav-link">Candidatos</a></li>
+                        <li><a href="{{ url_for('encuesta') }}" class="nav-link">Encuesta</a></li>
+                        <li><a href="{{ url_for('comentarios') }}" class="nav-link">Comentarios</a></li>
+                        <li><a href="{{ url_for('contactanos') }}" class="nav-link">Contactanos</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- !             - - - - - - - - - - - - MAIN  - - - - - - - - - - - -                -->
+            <!-- !             - - - - - - - - - - - - MAIN  - - - - - - - - - - - -                -->
+            {% block body %}
+                <main></main>
+            {% endblock %}
+
+            <!-- *             - - - - - - - - - - - -  FOOTER  - - - - - - - - - - - -                -->
+            <!-- *             - - - - - - - - - - - -  FOOTER  - - - - - - - - - - - -                -->
+
+            <footer>
+                <div class="logofooter">
+                    <img class="imglogofooter" src="{{ url_for('static', filename='img/logoFinal.png') }}" alt="Imagen del logo">
+                    <p class="subtitulosFo">Tu aliado para hacer realidad tus ideas</p>
+
+                </div>
+
+                <div class="menufooter">
+                    <ul>
+                        <li class="menuNavF">NAVEGAR</li>
+                        <li><a href="{{ url_for('main') }}">Inicio</a></li>
+                        <li><a href="{{ url_for('candidatosYpropuestas') }}">Candidatos</a></li>
+                        <li><a href="{{ url_for('encuesta') }}">Encuesta</a></li>
+                        <li><a href="{{ url_for('comentarios') }}">Comentarios</a></li>
+                        <li><a href="{{ url_for('contactanos') }}">Contactanos</a></li>
+                    </ul>
+                </div>
+
+                <div class="contactofooter">
+
+                    <p class="subtitulosFo subtRedes">Síguenos también aquí</p>
+
+                    <ul class="listaredesfooter">
+                        <li><a href="https://www.facebook.com"><i class="bi bi-facebook iconosFooter"></i></a></li>
+                        <li><a href="https://www.x.com"><i class="bi bi-twitter-x iconosFooter"></i></a></li>
+                        <li><a href="https://www.Instagram.com"><i class="bi bi-instagram iconosFooter"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class="copyfooter">
+                    <h5>&copy; 2024 <span>RHC</span> soluciones&reg;. Todos los derechos reservados.</h5>
+                </div>
+            </footer>
+        </div>
+
+        <!-- !             - - - - - - - - - - - -  scripts  - - - - - - - - - - - -                -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {% block scripts %}{% endblock %}
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    </body>
+
+</html>

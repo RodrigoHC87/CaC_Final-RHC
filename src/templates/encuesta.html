@@ -1,0 +1,253 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/encuesta.css') }}">
+    <style>
+        .cont-principal{
+            background: linear-gradient(to bottom, #FFFFFF 40%,  #A9D4F8 90%);
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}Encuesta 2027{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+    <!-- <div class="titulomain">
+        <h3 class="titprincipal">Encuesta de Opinión Pública</h3>
+    </div> -->
+    <div class="titulo-princ">
+        <h3>Encuesta de Opinión Pública</h3>
+    </div>
+
+    <div class="contenedorenvol">
+
+
+        <div class="introEncuesta">
+
+            <h3>¡Porque tu opinión nos importa y queremos conocerla!</h3>
+            <p>
+                Te dejamos una breve encuesta anónima para poder conocerte un poco más y que nos cuentes qué
+                opinas sobre la actualidad y el futuro de nuestro país.
+                ¿Los candidatos estarán a la altura de la situación? ¿Te parecen honestos o corruptos? <br>
+                <br>
+                Como argentinos, nunca debemos olvidar que......
+            </p>
+    
+            <p class="textoEncuestaP">
+                    ...Nuestra lucha es por el respeto a nuestro derecho a gobernar y gobernarnos, y el mal gobierno
+                    impone a los más, la ley de los menos. Nuestra lucha es por la libertad para el pensamiento y
+                    el caminar, y el mal gobierno pone cárceles y tumbas. Nuestra lucha es por la justicia, y el
+                    mal gobierno se llena de criminales y asesinos. Techo, tierra, trabajo, pan, salud, educación,
+                    independencia, democracia, libertad. Estas fueron nuestras demandas en las largas noches de Mayo.
+                    Estas son, hoy, nuestras exigencias.
+            </p>
+            <p class="textoPregunta">¿Estás listo para comenzar la encuesta?</p>
+    
+        </div>
+    
+        <div class="contenedorForm">
+    
+            <div class="encuestaform">
+    
+                <h3 class="titsecundario">Datos Personales</h3>
+    
+                <form action="/encuestaForm" method="post">
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input type="text"  name="nombre" id="nombre" required placeholder="Ingrese su Nombre">
+                    </p>
+                    <p class="columnaEdad">
+                        <label for="edad">Fecha de nacimiento</label>
+                        <input type="date" id="edad" name="edad" required>
+                    </p>
+                    <p class="dosColumnaB">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required placeholder="Ingrese su Email">
+                    </p>
+                    <p class="dosColumnaA">
+                        <label for="Nacionalidad">Nacionalidad</label>
+                        <select id="Nacionalidad" name="Nacionalidad" required>
+                            <option value="" disabled selected>Seleccione su nacionalidad</option>
+                            <option value="Argentino">Argentino/a</option>
+                            <option value="Naturalizado">Naturalizado/a</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+                    <p class="dosColumnaB">
+                        <label for="Provincia">¿En qué provincia reside?</label>
+                        <select id="Provincia" name="Provincia" required>
+                            <option value="" disabled selected>Seleccione una provincia</option>
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="CABA">CABA</option>
+                            <option value="Catamarca">Catamarca</option>
+                            <option value="Chaco">Chaco</option>
+                            <option value="Chubut">Chubut</option>
+                            <option value="Cordoba">Córdoba</option>
+                            <option value="Corrientes">Corrientes</option>
+                            <option value="Entre Rios">Entre Ríos</option>
+                            <option value="Formosa">Formosa</option>
+                            <option value="Jujuy">Jujuy</option>
+                            <option value="La Pampa">La Pampa</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Misiones">Misiones</option>
+                            <option value="Neuquen">Neuquén</option>
+                            <option value="Rio Negro">Río Negro</option>
+                            <option value="Salta">Salta</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Luis">San Luis</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Santa Fe">Santa Fe</option>
+                            <option value="Santiago del Estero">Santiago del Estero</option>
+                            <option value="Tierra del Fuego, Antártida e Islas del Atlántico Sur">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                            <option value="Tucuman">Tucumán</option>
+                        </select>
+                    </p>
+                    <p class="dosColumnaA">
+                        <label for="genero">¿Cuál es su género?</label>
+                        <select id="genero" name="genero" required>
+                            <option value="" disabled selected>Seleccione su género</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="bigenero">bigenero</option>
+                            <option value="no estoy seguro">no estoy seguro</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+                    <p class="dosColumnaB">
+                        <label for="estadoCivil">¿Cuál es su estado civil actual?</label>
+                        <select id="estadoCivil" name="estadoCivil" required>
+                            <option value="" disabled selected>Seleccione su estado civil</option>
+                            <option value="soltero">Soltero/a</option>
+                            <option value="Casado">Casado/a</option>
+                            <option value="concubinato">Concubinato</option>
+                            <option value="unionConvivencial">Unión convivencial</option>
+                            <option value="divorcio">Divorcio/a</option>
+                            <option value="viudo">Viudo/a</option>
+                        </select>
+                    <p class="dosColumnaA">
+                        <label for="nivelEducativo">¿Cuál es su nivel educativo alcanzado?</label>
+                        <select id="nivelEducativo" name="nivelEducativo" required>
+                            <option value="" disabled selected>Seleccione su nivel educativo</option>
+                            <option value="analfabeto">Analfabeto</option>
+                            <option value="solo leer y escribir">Sólo leer y escribir</option>
+                            <option value="educacion inicial">Educacion Inicial</option>
+                            <option value="educacion primaria">Educacion Primaria</option>
+                            <option value="educacion secundaria">Educacion Secundaria</option>
+                            <option value="educacion Terciaria">Educacion Terciaria</option>
+                            <option value="educacion universitaria">Educacion Universitaria</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+                    <p class="dosColumnaB">
+                        <label for="ocupacion">¿Cuál es su ocupación actual?</label>
+                        <select id="ocupacion" name="ocupacion" required>
+                            <option value="" disabled selected>Seleccione su ocupación</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Trabajador y estudiante">Trabajador/a y estudiante</option>
+                            <option value="Empleado de una empresa privada">Empleado/a de una empresa privada</option>
+                            <option value="Empleado del sector público">Empleado/a del sector público</option>
+                            <option value="Jubilado">Jubilado/a</option>
+                            <option value="Desempleado">Desempleado/a</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+    
+                    <h3 class="titsecundario">Tú Opinión</h3>
+    
+                    <P class="dosColumnaA">
+                        <label for="posibleVoto">1. ¿Qué probabilidades hay de que votes en las próximas elecciones?</label>
+                        <select id="posibleVoto" name="posibleVoto" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="MuchasProbabilidades">Muchas probabilidades de votar</option>
+                            <option value="PocasProbabilidades">Pocas probabilidades de votar</option>
+                            <option value="NoVotare">No votaré</option>
+                            <option value="NoLoSe">No lo sé</option>
+                        </select>
+                    </P>
+                    <P class="dosColumnaB">
+                        <label for="votoFuturo">2. Si hoy fueran las elecciones, ¿Por cuál alianza votarías?</label>
+                        <select id="votoFuturo" name="votoFuturo" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="VotoEnBlanco">Voto en Blanco</option>
+                            <option value="LaLibertadAvanza">La libertad avanza</option>
+                            <option value="UniónPorLaPatria">Unión por la patria</option>
+                            <option value="FrenteDeIzquierda">Frente de izquierda</option>
+                            <option value="JuntosPorElCambio">Juntos por el cambio</option>
+                            <option value="HacemosPorNuestroPaís">Hacemos por nuestro país</option>
+                            <option value="NoSabeNoResponde">No sabe / no responde</option>
+                        </select>
+                    </P>
+                    <P class="dosColumnaA">
+                        <label for="gestionSinCorrup">3. ¿Deberían existir leyes y reglamentos más estrictos para erradicar la corrupción?</label>
+                        <select id="gestionSinCorrup" name="gestionSinCorrup" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="TotalmenteDeAcuerdo">Totalmente de acuerdo</option>
+                            <option value="UnPocoDeAcuerdola">Un poco de acuerdo</option>
+                            <option value="Neutral">Neutral</option>
+                            <option value="UnPocoEnDesacuerdo">Un poco en desacuerdo</option>
+                            <option value="CompletamenteEnDesacuerdo">Completamente en desacuerdo</option>
+                        </select>
+                    </P>
+                    <P class="dosColumnaB">
+                        <label for="probMayorUrg">4. ¿Cuál de estos problemas deberia el proximo gobierno solucionar con mayor urgencia?</label>
+                        <select id="probMayorUrg" name="probMayorUrg" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="Economia">Economía</option>
+                            <option value="Corrupcion">Corrupción</option>
+                            <option value="Deuda externa">Deuda externa</option>
+                            <option value="Inseguridad">Inseguridad</option>
+                            <option value="Pobreza">Pobreza</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </P>
+                    <P class="dosColumnaA">
+                        <label for="gestionActual">5. ¿Como calificaria la gestion actual?</label>
+                        <select id="gestionActual" name="gestionActual" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="MuyMala">Muy mala</option>
+                            <option value="Mala">Mala</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Buena">Buena</option>
+                            <option value="MuyBuena">Muy buena</option>
+                        </select>
+                    </P>
+                    <P class="dosColumnaB">
+                        <label for="votoPasado">6. ¿Por quién votaste en las últimas elecciones?</label>
+                        <select id="votoPasado" name="votoPasado" required>
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="VotoEnBlanco">Voto en Blanco</option>
+                            <option value="LaLibertadAvanza">Frente de Todos</option>
+                            <option value="JuntosPorElCambio">Juntos por el Cambio</option>
+                            <option value="ConsensoFederal">Consenso Federal</option>
+                            <option value="FrenteDeIzquierda">Frente de Izquierda</option>
+                            <option value="FrenteNOS">Frente NOS</option>
+                            <option value="UniteLibertadDignidad">Unite por la Libertad y la Dignidad</option>
+                            <option value="NoSabeNoResponde">No sabe / no responde</option>
+                        </select>
+                    </P>
+                    <p class="bloque">
+                        <label for="comentario">¿Qué le dirías al futuro presidente?</label>
+                        <textarea name="comentario" id="comentario" rows="4" placeholder="Escribe tu comentario..."></textarea>
+                    </p>
+    
+                    <div class="btnenviar">
+                            <button class="boton-envio" type="submit">Enviar</button>
+                    </div>
+    
+                </form>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/encuesta.js') }}"></script>
+{% endblock %}

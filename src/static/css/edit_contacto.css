@@ -1,0 +1,134 @@
+
+/* Caja de comentarios */
+.caja-comentario{
+    /* grid-area: cajacom; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    min-height: 600px;
+    background-color: #f8f8f2;
+    padding : 1.5rem;
+}
+
+.Formulario {
+    margin-top: 45px;
+}
+
+.card-title.caja-coment {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.nombre-correo {
+    display: flex;
+    gap: 20px; /* Espacio entre los conjuntos de campos */
+    width: 100%; /* Ancho del contenedor */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.mitad {
+    max-width:48%; /* Ocupa la mitad del contenedor */
+}
+
+.campo label {
+    font-size: .9rem;
+    color: #000;
+}
+
+.campo input, .campo textarea {
+    width: 100%;
+    border-radius: .75rem;
+    background-color: #f8f8f8;
+    color: #000;
+    border: 1.5px solid #fcbf45; /* Añade un borde para mejor visibilidad */
+    padding: 0.5rem; /* Añade relleno para mejor apariencia */
+    box-sizing: border-box;
+    transition: border-color 0.4s ease;
+    font-size: 1rem;
+}
+
+.campo input:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añade una sombra al enfocar */
+}
+
+.campo textarea:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocar */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añade una sombra al enfocar */
+}
+
+.campo input {
+    height: 55px;
+}
+
+
+.btn-group.btn-comentario {
+    margin-top: 40px;
+}
+
+
+.btn-editar.btn-enviar {
+    max-width: 60%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.btn-editar.btn-enviar {
+    color: #fff;
+    background-color:#000;
+    border-color:   #000;
+}
+
+.btn-editar.btn-enviar:hover {
+    background-color: #222;
+    border-color: #000;
+}
+
+
+
+/* Estilos para los botones */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.400rem 2.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-sizing: content-box;
+}
+
+.btn {
+    margin-right: 20px; /* Ajusta el margen entre los botones */
+}
+
+.btn {
+    flex: 1; /* Hace que todos los botones dentro de .btn-group tengan el mismo ancho */
+    margin: 0 5px; /* Ajusta el margen entre los botones según tu preferencia */
+    max-width: 60px; /* Establece un ancho máximo para los botones, ajusta según sea necesario */
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 15px; /* Espacio superior opcional entre el texto y los botones */
+}

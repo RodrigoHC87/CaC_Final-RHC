@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block title %}Editar Comentario{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_contacto.css') }}">
+    <style>
+        .cont-principal{
+            background: linear-gradient(to bottom, #FFFFFF 40%,  #A9D4F8 90%);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+        <div class="contenedorenvol">
+
+            <div class="caja-comentario">
+                <h4 class="card-title caja-coment">Modifica tu comentario <strong>#{{ contact[0] }}</strong></h4>
+                <p class="card-text"><b>Política de comentarios:</b> Nos encantan los comentarios y agradecemos el tiempo
+                    que los lectores de nuestro blog dedican a escribirlos. Sin embargo, todos los
+                    comentarios serán revisados por un moderador antes de ser publicados y aquellos
+                    considerados inapropiados serán eliminados.
+                </p>
+
+                <form action="/update/{{ contact[0] }}" method="POST" class="Formulario" id="formulario">
+                    <div class="nombre-correo">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" value="{{ contact[1] }}">
+                        </div>
+                        <div class="campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="text" name="correo" id="correo" value="{{ contact[2] }}">
+                        </div>
+                    </div>
+
+                    <div class="campo mitad">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" name="asunto" id="asunto" value="{{ contact[3] }}">
+                    </div>
+
+                    <div class="campo">
+                        <label for="comentario">Comentario</label>
+                        <textarea name="comentario" rows="8" id="comentario">{{ contact[4] }}</textarea>
+                    </div>
+
+                    <div class="btn-group btn-comentario">
+                        <!-- <a href="#" class="btn btn-editar btn-enviar">Publicar comentario</a> -->
+                        <button class="btn btn-editar btn-enviar" type="submit">
+                            Modificar comentario
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/edit_contacto.js') }}"></script>
+{% endblock %}
