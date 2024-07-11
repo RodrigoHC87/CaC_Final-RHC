@@ -12,12 +12,76 @@ app = Flask(__name__, template_folder=template_dir)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'app_cac_comentarios'
+app.config['MYSQL_DB'] = 'db_cac'
 
 mysql = MySQL(app)
 
 #- Settings -#
 app.secret_key = 'my_secret_key'
+
+
+# Definición del modelo de Comentario
+class Comentario:
+    def __init__(self, id, nombre, correo, asunto, comentario, fecha, hora, fechaFormateada):
+        self.id = id
+        self.nombre = nombre
+        self.correo = correo
+        self.asunto = asunto
+        self.comentario = comentario
+        self.fecha = fecha
+        self.hora = hora
+        self.fechaFormateada = fechaFormateada
+
+# Definición de la clase Mensaje
+class Mensaje:
+    def __init__(self, id, nombre, apellido, email, telefono, asunto, comentario, checkk, fecha):
+        self.id = id
+        self.nombre = nombre
+        self.apellido = apellido
+        self.email = email
+        self.telefono = telefono
+        self.asunto = asunto
+        self.comentario = comentario
+        self.checkk = checkk
+        self.fecha = fecha
+
+
+# Script para crear la tabla de Comentarios
+with app.app_context():
+    cursor = mysql.connection.cursor()
+    cursor.execute('''
+            CREATE TABLE IF NOT EXISTS comentarios (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                nombre VARCHAR(50) NOT NULL,
+                correo VARCHAR(50) NOT NULL,
+                asunto VARCHAR(35) NOT NULL,
+                comentario TEXT NOT NULL,
+                fecha DATE NOT NULL,
+                hora TIME NOT NULL,
+                fechaFormateada VARCHAR(10) NOT NULL,
+                fechaFormateadaEdit VARCHAR(10) NOT NULL,
+                horaEdit TIME NOT NULL
+            )
+        ''')
+            # Crear tabla Mensajes
+    cursor.execute('''
+            CREATE TABLE IF NOT EXISTS mensajes (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                nombre VARCHAR(30) NOT NULL,
+                apellido VARCHAR(30) NOT NULL,
+                email VARCHAR(60) NOT NULL,
+                telefono VARCHAR(12) NOT NULL,
+                asunto VARCHAR(60) NOT NULL,
+                comentario TEXT NOT NULL,
+                checkk TINYINT(1) NOT NULL,
+                fecha DATETIME NOT NULL
+            )
+        ''')
+    mysql.connection.commit()
+    cursor.close()
+
+
+
 
 
 #- Routes -#
